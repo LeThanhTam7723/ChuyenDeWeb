@@ -12,7 +12,7 @@ body {
 .container {
   width: 100vw;
   min-height: 100vh;
-  background: #ced8ff;
+  background: #fff;
   transition: 0.5s;
   min-width: 1200px;
 }
