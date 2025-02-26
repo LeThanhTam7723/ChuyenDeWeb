@@ -1,0 +1,160 @@
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.decorate {
+    flex: 1;
+    background-color: black;
+    transition: flex 0.3s ease-in-out;
+    opacity: 0.3s ease-in-out;
+    color: #fff;
+}
+.decorate .main-decorate {
+    box-sizing: border-box;
+    padding: 150px 80px;
+}
+
+
+.login {
+    flex: 1;
+    background-color: #fff;
+    transition: flex 0.3s ease-in-out;
+    
+}
+.login .login-content {
+    box-sizing: border-box;
+    padding: 100px 80px;
+    
+}
+.login h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.login h2 {
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+login label {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.login input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f5f7fa;
+}
+
+.login a {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.login button {
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.login button:hover {
+    background: #333;
+}
+
+.login div {
+    margin-top: 20px;
+}
+
+.login p {
+    font-size: 12px;
+    color: #666;
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login p::before,
+.login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ddd;
+}
+
+.login p::before {
+    left: 0;
+}
+
+.login p::after {
+    right: 0;
+}
+
+.login ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.login ul li {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.login ul li:hover {
+    background: #f0f0f0;
+}
+
+/* Khi màn hình nhỏ hơn 800px, bên phải lấn dần bên trái */
+@media (max-width: 800px) {
+    .decorate {
+        flex: 0.5;
+    }
+
+    .login {
+        flex: 1.5;  
+    }
+}
+
+@media (max-width: 500px) {
+    .decorate {
+        display: none;
+    }
+
+    .login {
+        flex: 1;
+        width: 100%;
+    }
+}

@@ -4,18 +4,5 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-/* html,
-body {
-  height: 100%;
-  display: block;
-} */
-.container {
-  width: 100vw;
-  min-height: 100vh;
-  background: #fff;
-  transition: 0.5s;
-  min-width: 1200px;
-}
-/* .container.light {
-  background :#222;
-} */
+
+
