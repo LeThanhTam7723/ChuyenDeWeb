@@ -1,14 +1,17 @@
 .main {
     display: flex;
     height: 100vh;
+    
 }
 
 .decorate {
     flex: 1;
-    background-color: black;
+    /* background-color: black; */
     transition: flex 0.3s ease-in-out;
     opacity: 0.3s ease-in-out;
     color: #fff;
+    position: relative;
+    pointer-events: none;
 }
 .decorate .main-decorate {
     box-sizing: border-box;
@@ -16,41 +19,42 @@
 }
 
 
-.login {
+.main-form {
+    position: relative;
     flex: 1;
     background-color: #fff;
     transition: flex 0.3s ease-in-out;
     
 }
-.login .login-content {
+.main-form .login-content {
     box-sizing: border-box;
-    padding: 100px 80px;
+    padding: 100px 100px;
     
 }
-.login h1 {
+.main-form h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.login h2 {
+.main-form h2 {
     font-size: 16px;
     color: #666;
     font-weight: normal;
     margin-bottom: 20px;
 }
-.login form {
+.main-form form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-login label {
+.main-form label {
     font-size: 14px;
     font-weight: 500;
     text-align: left;
 }
 
-.login input {
+.main-form input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -59,7 +63,7 @@ login label {
     background: #f5f7fa;
 }
 
-.login a {
+.main-form a {
     font-size: 12px;
     color: #666;
     text-align: right;
@@ -68,7 +72,7 @@ login label {
     text-decoration: none;
 }
 
-.login button {
+.main-form button {
     background: black;
     color: white;
     font-size: 16px;
@@ -79,15 +83,15 @@ login label {
     cursor: pointer;
     margin-top: 10px;
 }
-.login button:hover {
+.main-form button:hover {
     background: #333;
 }
 
-.login div {
+.main-form div {
     margin-top: 20px;
 }
 
-.login p {
+.main-form p {
     font-size: 12px;
     color: #666;
     position: relative;
@@ -95,8 +99,8 @@ login label {
     margin: 20px 0;
 }
 
-.login p::before,
-.login p::after {
+.main-form p::before,
+.main-form p::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -105,15 +109,15 @@ login label {
     background: #ddd;
 }
 
-.login p::before {
+.main-form p::before {
     left: 0;
 }
 
-.login p::after {
+.main-form p::after {
     right: 0;
 }
 
-.login ul {
+.main-form ul {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -121,7 +125,7 @@ login label {
     padding: 0;
 }
 
-.login ul li {
+.main-form ul li {
     width: 40px;
     height: 40px;
     background: #fff;
@@ -133,7 +137,7 @@ login label {
     cursor: pointer;
 }
 
-.login ul li:hover {
+.main-form ul li:hover {
     background: #f0f0f0;
 }
 
@@ -143,7 +147,7 @@ login label {
         flex: 0.5;
     }
 
-    .login {
+    .main-form {
         flex: 1.5;  
     }
 }
@@ -153,8 +157,23 @@ login label {
         display: none;
     }
 
-    .login {
+    .main-form {
         flex: 1;
         width: 100%;
     }
 }
+.signup_trans {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.signup_trans h4,
+.signup_trans a {
+    margin: 0;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
