@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import LoginPageUi from '../src/assets/pages/LoginPage/view/LoginPageView'
+import LoginPageUi from './pages/LoginPage/view/LoginPageView.jsx'
 
 const App = () => {
   const [theme,setTheme] = useState('light');

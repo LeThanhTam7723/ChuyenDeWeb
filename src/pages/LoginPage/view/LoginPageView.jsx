@@ -2,7 +2,7 @@ import './LoginPageView.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faGoogle } from  '@fortawesome/free-brands-svg-icons'
-import ParticlesComponent from '../../../components/background/ParticlesComponent';
+import ParticlesComponent from '../../../components/background/ParticlesComponent.jsx';
 
 const loginPageUi = function(){
     return (
