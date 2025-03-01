@@ -1,0 +1,79 @@
+.homepage-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.banner-section {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.banner-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.banner-slide.active {
+  opacity: 1;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.banner-overlay .banner-title-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.banner-overlay .banner-title-form button{
+    background: #000;
+    color: #fff;
+    padding: 10px ;
+    border-radius: 20px;
+    border :none;
+}
+
+.search-section {
+  padding: 20px;
+  text-align: center;
+}
+
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+.discount-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+

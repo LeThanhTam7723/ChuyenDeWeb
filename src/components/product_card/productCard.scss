@@ -1,0 +1,30 @@
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .product-image-container{
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .discount-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+    }
+    .product-details {
+        .cart-button,
+        .wishlist-button {
+            cursor: pointer;
+        }
+
+    }
+}

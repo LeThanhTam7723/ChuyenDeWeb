@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import LoginPageUi from './pages/LoginPage/view/LoginPageView.jsx'
+import Header from './components/navbar/HeaderView.jsx'
+// import LoginPageUi from './pages/LoginPage/view/LoginPageView.jsx'
+import HomePage from './pages/HomePage/view/HomePageView.jsx'
 
 const App = () => {
   const [theme,setTheme] = useState('light');
 
   return (
-    <div className='container'>
-      <LoginPageUi/>
+    <div className='main-container'>
+      <Header/>
+      <HomePage/>
+      {/* <LoginPageUi/> */}
     </div>
     
   )
