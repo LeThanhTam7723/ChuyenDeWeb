@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Header from './components/navbar/HeaderView.jsx'
-// import LoginPageUi from './pages/LoginPage/view/LoginPageView.jsx'
-import HomePage from './pages/HomePage/view/HomePageView.jsx'
+import AppRoutes from './Route/Route.jsx';
 
 const App = () => {
   const [theme,setTheme] = useState('light');
@@ -9,8 +8,7 @@ const App = () => {
   return (
     <div className='main-container'>
       <Header/>
-      <HomePage/>
-      {/* <LoginPageUi/> */}
+      <AppRoutes/>
     </div>
     
   )

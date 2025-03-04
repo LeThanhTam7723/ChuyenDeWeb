@@ -1,17 +1,73 @@
 import React, { useState, useEffect } from "react";
-import { FiSearch, FiShoppingCart, FiHeart, FiMenu, FiX } from "react-icons/fi";
+import { FiMic,FiSearch, FiShoppingCart, FiHeart, FiMenu, FiX } from "react-icons/fi";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail, MdPhone, MdKeyboardArrowDown } from "react-icons/md";
+import { FaMicrophone } from "react-icons/fa6";
 import "./HeaderView.css"; // Import file CSS
+import Swal from "sweetalert2";
+import { Link, Navigate } from "react-router-dom";
+
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);// phần menu cho mobi khi reponsive
   const [cartCount, setCartCount] = useState(3);
   const [wishlistCount, setWishlistCount] = useState(2);
 
+  // Tìm kiếm bằng giọng nói.
+  const [searchQuery, setSearchQuery] = useState('');
+  
+
+  const startListening = () => {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'vi-VN'; // Đặt ngôn ngữ tiếng Việt
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    // Hiển thị SweetAlert2 khi bắt đầu nghe
+    Swal.fire({
+      title: 'Đang nghe...',
+      html: '<div class="recording-icon"></div>',
+      showConfirmButton: true,
+      allowOutsideClick: false,
+      willOpen: () => {
+        recognition.start();
+      },
+    });
+
+    // Xử lý kết quả nhận dạng
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setSearchQuery(transcript);
+
+      // Đóng SweetAlert2 và hiển thị kết quả
+      Swal.fire({
+        title: 'Kết quả nhận dạng',
+        text: transcript,
+        icon: 'success',
+        confirmButtonText: 'OK',
+      });
+    };
+
+    // Xử lý lỗi
+    recognition.onerror = (event) => {
+      Swal.fire({
+        title: 'Lỗi',
+        text: 'Không thể nhận dạng giọng nói. Vui lòng thử lại!',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
+    };
+
+    // Khi ngừng nghe
+    recognition.onspeechend = () => {
+      recognition.stop();
+    };
+  };
+
+
   const menuItems = [
-    { name: "Home", link: "#" },
-    { name: "Shop", link: "#", hasDropdown: true },
+    { name: "Home", link: "/" },
+    { name: "Shop", link: "/shop", hasDropdown: true },
     { name: "Pages", link: "#", hasDropdown: true },
     { name: "Blog", link: "#" },
     { name: "Contact", link: "#" },
@@ -101,8 +157,11 @@ const Header = () => {
                   type="text"
                   placeholder="Search..."
                   className="search-input"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <FiSearch className="search-icon" />
+                <FiMic className='search-icon'
+                onClick={startListening} />
               </div>
               <div className="cart-wishlist">
                 <div className="wishlist-icon">
@@ -131,7 +190,7 @@ const Header = () => {
               placeholder="Search..."
               className="search-input"
             />
-            <FiSearch className="search-icon" />
+            <FaMicrophone className="search-icon" />
           </div>
           </div>
         </div>
