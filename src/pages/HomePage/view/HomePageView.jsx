@@ -197,37 +197,37 @@ const HomePage = () => {
         <h1>Các danh mục sản phẩm</h1>
       </div>
       <div className="categories-slider">
-  <button
-    onClick={() => setActiveCategoryIndex((prev) => Math.max(0, prev - 1))}
-    className="slider-button left"
-  >
-    <FaChevronLeft />
-  </button>
+        <button
+          onClick={() => setActiveCategoryIndex((prev) => Math.max(0, prev - 1))}
+          className="slider-button left"
+        >
+          <FaChevronLeft />
+        </button>
 
-  <div className="categories-list">
-    {/* Nhân bản danh sách categories để tạo hiệu ứng lặp lại */}
-    {[...categories, ...categories].map((category) => (
-      <div key={category.id} className="category-item">
-        <div className="category-image-container">
-          <img src={category.image} alt={category.name} className="category-image" />
-          <div className="category-overlay">
-            <div className="category-info">
-              <h3>{category.name}</h3>
-              <p>{category.count}</p>
+        <div className="categories-list">
+          {/* Nhân bản danh sách categories để tạo hiệu ứng lặp lại */}
+          {[...categories, ...categories].map((category, index) => (
+            <div key={`${category.id}-${index}`} className="category-item">
+              <div className="category-image-container">
+                <img src={category.image} alt={category.name} className="category-image" />
+                <div className="category-overlay">
+                  <div className="category-info">
+                    <h3>{category.name}</h3>
+                    <p>{category.count}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
 
-  <button
-    onClick={() => setActiveCategoryIndex((prev) => Math.min(categories.length - 4, prev + 1))}
-    className="slider-button right"
-  >
-    <FaChevronRight />
-  </button>
-</div>
+        <button
+          onClick={() => setActiveCategoryIndex((prev) => Math.min(categories.length - 4, prev + 1))}
+          className="slider-button right"
+        >
+          <FaChevronRight />
+        </button>
+      </div>
 
 
 
